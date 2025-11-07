@@ -1,20 +1,33 @@
-# 📧 Sistema de Automação de E-mail Yampi
+# Automação de Pedido Aprovado (Yampi)
 
-Sistema completo para automatizar o envio de e-mails de confirmação de compra de e-books via webhook da Yampi.
+Aplicativo em Next.js para automatizar o envio de e-mail quando um pedido da Yampi é aprovado.
 
-## 🚀 Funcionalidades
+## Funcionalidades
 
-- ✅ Gerenciamento de produtos digitais (e-books)
-- ✅ Editor de template de e-mail com variáveis dinâmicas
-- ✅ Configuração de webhook Yampi
-- ✅ Configuração de SMTP para envio de e-mails
-- ✅ Histórico completo de envios
-- ✅ Interface moderna e responsiva
+- Cadastro de produtos digitais (e-books) com:
+  - Nome
+  - Link de acesso (Drive)
+  - ID do produto na Yampi
+- Template de e-mail HTML com variáveis:
+  - `{{nome_cliente}}`
+  - `{{nome_produto}}`
+  - `{{link_produto}}`
+  - `{{numero_pedido}}`
+  - `{{data_pedido}}`
+- Configuração de SMTP
+- Webhook `/api/webhook/yampi` para receber pedidos da Yampi
+- Histórico de envios de e-mail
 
-## 📦 Instalação
+## Tecnologias
 
-1. Clone o repositório
-2. Instale as dependências:
+- Next.js
+- TypeScript
+- Nodemailer
+- Tailwind CSS
+
+## Como rodar
 
 ```bash
 npm install
+npm run dev
+# abre http://localhost:3000 (ou porta que o Next mostrar)
